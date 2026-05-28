@@ -1,3 +1,73 @@
+// Translations
+const translations = {
+    ru: {
+        'nav.home': 'Главная',
+        'nav.faq': 'FAQ',
+        'nav.contacts': 'Контакты',
+        'hero.badge': 'Центр поддержки',
+        'hero.title1': 'Нужна',
+        'hero.title2': 'помощь',
+        'hero.desc': 'Добро пожаловать в центр поддержки MangaLove. Здесь вы найдёте ответы на часто задаваемые вопросы и сможете связаться с нами напрямую.',
+        'hero.contact': 'Связаться',
+        'hero.card1': 'Быстрый ответ',
+        'hero.card2': 'Решение проблем',
+        'hero.card3': 'Помощь 24/7',
+        'faq.title1': 'Часто задаваемые',
+        'faq.title2': 'вопросы',
+        'faq.desc': 'Ответы на самые популярные вопросы пользователей',
+        'faq.q1': 'Как быстро вы отвечаете на сообщения?',
+        'faq.a1': 'Обычно мы отвечаем в течение нескольких часов. В рабочее время ответы приходят ещё быстрее — в среднем за 30-60 минут.',
+        'faq.q2': 'Какой способ связи предпочитаете?',
+        'faq.a2': 'Для быстрой связи лучше использовать Telegram — там мы отвечаем быстрее всего. Для деловых запросов подойдёт электронная почта.',
+        'faq.q3': 'Как подготовиться перед обращением?',
+        'faq.a3': 'Опишите проблему как можно подробнее: что вы делали, что ожидали, что произошло. Скриншоты и логи значительно ускорят решение.',
+        'faq.q4': 'Можно ли получить удалённую помощь?',
+        'faq.a4': 'Да, мы можем помочь удалённо через демонстрацию экрана или подключение к вашему устройству (по согласованию).',
+        'faq.q5': 'Где найти обновления проекта?',
+        'faq.a5': 'Все актуальные новости и обновления публикуются в нашем Telegram-канале. Подписывайтесь, чтобы не пропустить важные изменения.',
+        'contact.tag': 'Контакты',
+        'contact.title1': 'Свяжитесь',
+        'contact.title2': 'с нами',
+        'contact.desc': 'Выберите удобный способ связи',
+        'contact.tgHint': 'Нажмите, чтобы написать',
+        'contact.emailHint': 'Для деловых запросов',
+        'footer.rights': 'Все права защищены.'
+    },
+    en: {
+        'nav.home': 'Home',
+        'nav.faq': 'FAQ',
+        'nav.contacts': 'Contacts',
+        'hero.badge': 'Support Center',
+        'hero.title1': 'Need',
+        'hero.title2': 'help',
+        'hero.desc': 'Welcome to the MangaLove support center. Here you will find answers to frequently asked questions and can contact us directly.',
+        'hero.contact': 'Contact us',
+        'hero.card1': 'Quick response',
+        'hero.card2': 'Problem solving',
+        'hero.card3': 'Support 24/7',
+        'faq.title1': 'Frequently Asked',
+        'faq.title2': 'Questions',
+        'faq.desc': 'Answers to the most popular user questions',
+        'faq.q1': 'How quickly do you respond to messages?',
+        'faq.a1': 'We usually respond within a few hours. During working hours, responses come even faster — on average within 30-60 minutes.',
+        'faq.q2': 'Which communication method do you prefer?',
+        'faq.a2': 'For quick communication, it is better to use Telegram — we respond fastest there. For business inquiries, email is suitable.',
+        'faq.q3': 'How to prepare before contacting?',
+        'faq.a3': 'Describe the problem in as much detail as possible: what you did, what you expected, what happened. Screenshots and logs will significantly speed up the solution.',
+        'faq.q4': 'Can I get remote assistance?',
+        'faq.a4': 'Yes, we can help remotely via screen sharing or connecting to your device (by agreement).',
+        'faq.q5': 'Where to find project updates?',
+        'faq.a5': 'All current news and updates are published on our Telegram channel. Subscribe so you do not miss important changes.',
+        'contact.tag': 'Contacts',
+        'contact.title1': 'Contact',
+        'contact.title2': 'us',
+        'contact.desc': 'Choose a convenient way to connect',
+        'contact.tgHint': 'Click to write',
+        'contact.emailHint': 'For business inquiries',
+        'footer.rights': 'All rights reserved.'
+    }
+};
+
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
@@ -11,6 +81,36 @@ themeToggle.addEventListener('click', () => {
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
 });
+
+// Language Switcher
+const langBtns = document.querySelectorAll('.lang-btn');
+let currentLang = localStorage.getItem('lang') || 'ru';
+
+function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    html.setAttribute('lang', lang);
+
+    langBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+}
+
+langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        setLang(btn.dataset.lang);
+    });
+});
+
+// Initialize language
+setLang(currentLang);
 
 // Mobile Menu
 const menuToggle = document.getElementById('menuToggle');
