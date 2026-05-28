@@ -117,24 +117,25 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
     color: var(--text);
     font-weight: 700;
     font-size: 1.2rem;
 }
 
-.logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: var(--primary);
-    color: white;
+.logo-img {
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
-    font-weight: 700;
-    font-size: 1.1rem;
+    object-fit: cover;
+}
+
+.logo-text {
+    background: linear-gradient(135deg, var(--primary), #f0a0a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav {
@@ -160,6 +161,88 @@ body {
 
 .nav-link.active {
     color: var(--primary);
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.lang-btn:hover {
+    background: var(--border);
+}
+
+.lang-btn.active {
+    background: var(--primary);
+}
+
+.flag {
+    display: block;
+    width: 22px;
+    height: 15px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.flag-ru {
+    background: linear-gradient(to bottom, #fff 33%, #0039a6 33%, #0039a6 66%, #d52b1e 66%);
+}
+
+.flag-en {
+    background: #012169;
+    position: relative;
+}
+
+.flag-en::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(to bottom, transparent 40%, #fff 40%, #fff 60%, transparent 60%),
+        linear-gradient(to right, transparent 40%, #fff 40%, #fff 60%, transparent 60%);
+}
+
+.flag-en::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(to bottom, transparent 42%, #C8102E 42%, #C8102E 58%, transparent 58%),
+        linear-gradient(to right, transparent 42%, #C8102E 42%, #C8102E 58%, transparent 58%);
 }
 
 .theme-toggle {
@@ -665,18 +748,6 @@ body {
     background: var(--primary-glow);
 }
 
-/* Scroll indicator */
-@keyframes scrollIndicator {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .nav {
@@ -696,6 +767,14 @@ body {
     }
 
     .menu-toggle {
+        display: flex;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    .nav.active .header-actions-mobile {
         display: flex;
     }
 
@@ -725,6 +804,21 @@ body {
 
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile actions in nav */
+    .nav.active {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .nav.active .header-actions {
+        display: flex;
+        justify-content: center;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
     }
 }
 
