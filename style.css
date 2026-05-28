@@ -203,9 +203,11 @@ body {
     background: var(--primary);
 }
 
-.flag {
-    font-size: 20px;
-    line-height: 1;
+.flag-img {
+    width: 24px;
+    height: 16px;
+    border-radius: 3px;
+    object-fit: cover;
 }
 
 .theme-toggle {
