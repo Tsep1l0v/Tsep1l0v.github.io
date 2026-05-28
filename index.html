@@ -1,251 +1,246 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Поддержка приложения</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .card {
-            max-width: 500px;
-            width: 100%;
-            background: white;
-            border-radius: 32px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 40px 30px;
-            text-align: center;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 30px;
-        }
-
-        .support-options {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 30px;
-        }
-
-        .support-button {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 20px;
-            background: #f8f9fa;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .support-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: #667eea;
-        }
-
-        .button-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .icon {
-            width: 44px;
-            height: 44px;
-            background: white;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .button-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .button-title {
-            font-weight: 600;
-            font-size: 17px;
-            color: #1a1a2e;
-        }
-
-        .button-subtitle {
-            font-size: 13px;
-            color: #6c757d;
-            margin-top: 4px;
-        }
-
-        .arrow {
-            color: #adb5bd;
-            font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .support-button:hover .arrow {
-            transform: translateX(5px);
-            color: #667eea;
-        }
-
-        .info-box {
-            background: #f1f3f9;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
-        }
-
-        .info-box p {
-            color: #495057;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .info-box strong {
-            color: #1a1a2e;
-        }
-
-        .response-time {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px;
-            background: #e8f5e9;
-            border-radius: 50px;
-            color: #2e7d32;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .footer {
-            padding: 20px 30px;
-            background: #f8f9fa;
-            text-align: center;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .footer p {
-            color: #6c757d;
-            font-size: 12px;
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                padding: 30px 20px;
-            }
-            .content {
-                padding: 20px;
-            }
-            .support-button {
-                padding: 14px 16px;
-            }
-            .icon {
-                width: 38px;
-                height: 38px;
-                font-size: 20px;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card">
-        <div class="header">
-            <h1>✨ Служба поддержки</h1>
-            <p>Мы здесь, чтобы помочь вам</p>
-        </div>
+    <div class="particles" id="particles"></div>
 
-        <div class="content">
-            <div class="support-options">
-                <a href="https://t.me/tsep1lov" class="support-button" target="_blank">
-                    <div class="button-left">
-                        <div class="icon">📱</div>
-                        <div class="button-text">
-                            <span class="button-title">Telegram</span>
-                            <span class="button-subtitle">@tsep1lov</span>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <span class="logo-icon">?</span>
+                    <span class="logo-text">Support</span>
+                </a>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Главная</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#contact" class="nav-link">Контакты</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <span class="theme-icon sun">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </span>
+                    <span class="theme-icon moon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">Центр поддержки</div>
+                    <h1 class="hero-title">
+                        Нужна <span class="gradient-text">помощь</span>?
+                    </h1>
+                    <p class="hero-desc">
+                        Добро пожаловать в центр поддержки. Здесь вы найдёте ответы на часто задаваемые вопросы и сможете связаться со мной напрямую.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            Связаться
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                        <a href="#faq" class="btn btn-outline">FAQ</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <span>Быстрый ответ</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <span>Решение проблем</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                        </div>
+                        <span>Помощь 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">FAQ</span>
+                    <h2 class="section-title">Часто задаваемые <span class="gradient-text">вопросы</span></h2>
+                    <p class="section-desc">Ответы на самые популярные вопросы пользователей</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item" data-aos>
+                        <button class="faq-question">
+                            <span>Как быстро вы отвечаете на сообщения?</span>
+                            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Обычно я отвечаю в течение нескольких часов. В рабочее время ответы приходят ещё быстрее — в среднем за 30-60 минут.</p>
                         </div>
                     </div>
-                    <div class="arrow">→</div>
-                </a>
-
-                <a href="mailto:tsepil0v@yandex.ru" class="support-button">
-                    <div class="button-left">
-                        <div class="icon">📧</div>
-                        <div class="button-text">
-                            <span class="button-title">Email</span>
-                            <span class="button-subtitle">tsepil0v@yandex.ru</span>
+                    <div class="faq-item" data-aos>
+                        <button class="faq-question">
+                            <span>Какой способ связи предпочитаете?</span>
+                            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Для быстрой связи лучше использовать Telegram — там я отвечаю быстрее всего. Для деловых запросов подойдёт электронная почта.</p>
                         </div>
                     </div>
-                    <div class="arrow">→</div>
-                </a>
+                    <div class="faq-item" data-aos>
+                        <button class="faq-question">
+                            <span>Вы помогаете бесплатно?</span>
+                            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Консультации и базовая поддержка предоставляются бесплатно. Для сложных проектов условия обсуждаются индивидуально.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos>
+                        <button class="faq-question">
+                            <span>Какую информацию подготовить перед обращением?</span>
+                            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Опишите проблему как можно подробнее: что вы делали, что ожидали, что произошло. Скриншоты и логи значительно ускорят решение.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos>
+                        <button class="faq-question">
+                            <span>Можно ли получить удалённую помощь?</span>
+                            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, я могу помочь удалённо через демонстрацию экрана или подключение к вашему устройству (по согласованию).</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="info-box">
-                <p>
-                    <strong>📌 Как получить помощь быстрее?</strong><br>
-                    • Опишите проблему подробно<br>
-                    • Приложите скриншот, если возможно<br>
-                    • Укажите модель устройства и версию iOS
-                </p>
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Контакты</span>
+                    <h2 class="section-title">Свяжитесь <span class="gradient-text">со мной</span></h2>
+                    <p class="section-desc">Выберите удобный способ связи</p>
+                </div>
+                <div class="contact-grid">
+                    <a href="https://t.me/tsep1lov" target="_blank" rel="noopener" class="contact-card" data-aos>
+                        <div class="contact-icon telegram">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Telegram</h3>
+                            <p>@tsep1lov</p>
+                            <span class="contact-hint">Нажмите, чтобы написать</span>
+                        </div>
+                        <svg class="contact-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7 7 17 7 17 17"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:tsepil0v@yandex.ru" class="contact-card" data-aos>
+                        <div class="contact-icon email">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Email</h3>
+                            <p>tsepil0v@yandex.ru</p>
+                            <span class="contact-hint">Для деловых запросов</span>
+                        </div>
+                        <svg class="contact-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7 7 17 7 17 17"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="response-time">
-                <span>⏱️</span>
-                <span>Обычно отвечаем в течение 24 часов</span>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p>&copy; 2026 Support Center. Все права защищены.</p>
+                <div class="footer-links">
+                    <a href="https://t.me/tsep1lov" target="_blank" rel="noopener" aria-label="Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:tsepil0v@yandex.ru" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
+    </footer>
 
-        <div class="footer">
-            <p>© 2025 Все права защищены</p>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
