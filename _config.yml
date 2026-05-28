@@ -1,3 +1,13 @@
+# Настройки сайта поддержки
+title: Поддержка приложения
+description: Служба поддержки — свяжитесь с нами по любым вопросам
+
+# Тема Jekyll
 theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+
+# Отключаем показ веток и другого лишнего
+show_downloads: false
+
+# Настройки для GitHub Pages
+github:
+  is_project_page: false
