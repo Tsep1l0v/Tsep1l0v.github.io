@@ -639,6 +639,11 @@ body {
     color: var(--primary);
 }
 
+.contact-icon.website {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
 .contact-card:hover .contact-icon {
     transform: scale(1.1);
 }
