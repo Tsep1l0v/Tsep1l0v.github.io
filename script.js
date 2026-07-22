@@ -31,6 +31,8 @@ const translations = {
         'contact.desc': 'Выберите удобный способ связи',
         'contact.tgHint': 'Нажмите, чтобы написать',
         'contact.emailHint': 'Для деловых запросов',
+        'contact.website': 'Основной сайт',
+        'contact.webHint': 'Нажмите, чтобы перейти',
         'footer.rights': 'Все права защищены.'
     },
     en: {
@@ -64,6 +66,8 @@ const translations = {
         'contact.desc': 'Choose a convenient way to connect',
         'contact.tgHint': 'Click to write',
         'contact.emailHint': 'For business inquiries',
+        'contact.website': 'Main Website',
+        'contact.webHint': 'Click to visit',
         'footer.rights': 'All rights reserved.'
     }
 };
